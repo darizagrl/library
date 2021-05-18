@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  app:
+    image: 'demo-books'
+    build:
+      context: src/main
+    container_name: demo-books
+    ports:
+      -  "8081:8081"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:./data/books
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'buildo/h2database'
+    container_name: my-h2
