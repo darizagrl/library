@@ -2,6 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cucumber</module>
+        <module>core</module>
+    </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -9,12 +14,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>library</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>library</name>
+    <description>A library project with Spring Boot</description>
     <properties>
-        <java.version>15</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -98,37 +103,40 @@
             <version>1.7.24</version>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>6.10.4</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.20</version>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>6.10.4</version>
-            <scope>test</scope>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-spring</artifactId>
-            <version>6.10.4</version>
-            <scope>test</scope>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
 
     <build>
+        <sourceDirectory>${project.basedir}/core/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/core/src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -170,22 +178,6 @@
                         <version>0.14</version>
                     </dependency>
                 </dependencies>
-                <!--                <configuration>-->
-                <!--                    <targetClasses>-->
-                <!--                        <param>com.example.demo.service*</param>-->
-                <!--                    </targetClasses>-->
-                <!--                    <excludedClasses>-->
-                <!--                        <param>com.example.demo.service.mapper*</param>-->
-                <!--                        <param>com.example.demo.service.model*</param>-->
-                <!--                    </excludedClasses>-->
-                <!--                    <targetTests>-->
-                <!--                        <param>com.example.demo.service*</param>-->
-                <!--                    </targetTests>-->
-                <!--                    <excludedTestClasses>-->
-                <!--                        <param>com.example.demo.service.mapper*</param>-->
-                <!--                        <param>com.example.demo.service.model*</param>-->
-                <!--                    </excludedTestClasses>-->
-                <!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
@@ -210,5 +202,4 @@
             </plugin>
         </plugins>
     </reporting>
-
 </project>

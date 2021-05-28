@@ -2,18 +2,23 @@ version: '2'
 
 services:
   app:
-    image: 'demo-books'
+    image: 'librarycore'
     build:
-      context: src/main
-    container_name: demo-books
+      context: core/src/main
+    container_name: librarycore
     ports:
-      -  "8081:8081"
+      - "8081:8081"
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:h2:./data/books
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/books
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:
-    image: 'buildo/h2database'
-    container_name: my-h2
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root

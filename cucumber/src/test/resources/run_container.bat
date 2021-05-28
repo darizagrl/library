@@ -1,0 +1,1 @@
+docker run --name library-v3 -p 8081:8081 -t library

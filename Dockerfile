@@ -1,5 +1,5 @@
-FROM openjdk:15-jdk-alpine
-ADD target/demo-books.jar demo-books.jar
-ADD data/books.mv.db books.mv.db
+FROM openjdk:11-jre
+ADD core/target/librarycore.jar librarycore.jar
+#ADD data/books.mv.db books.mv.db
 EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "demo-books.jar"]
+ENTRYPOINT ["java", "-jar", "librarycore.jar"]
