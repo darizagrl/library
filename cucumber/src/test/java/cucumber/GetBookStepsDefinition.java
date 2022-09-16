@@ -1,8 +1,6 @@
 package cucumber;
 
-import com.example.library.persistence.entity.Author;
 import com.example.library.persistence.entity.Book;
-import com.example.library.persistence.repository.author_repo.AuthorRepo;
 import com.example.library.persistence.repository.book_repo.BookRepo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,8 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetBookStepsDefinition {
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String bookResourceUrl
-            = "http://localhost:8081/books/";
+    private final String bookResourceUrl = "http://localhost:8081/books/";
     @Autowired
     private BookRepo bookRepo;
     @Autowired
