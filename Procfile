@@ -1,1 +1,1 @@
-web: java -jar core/target/*.jar
+web: java -cp core/target/*.jar core.src.main.java.com.example.library.DemoApplication
