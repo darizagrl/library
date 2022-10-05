@@ -188,9 +188,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>9.3.0</version>
                 <configuration>
-                    <url>jdbc:h2:./data/books</url>
-                    <user></user>
-                    <password></password>
+                    <url>jdbc:postgresql://ec2-3-223-242-224.compute-1.amazonaws.com:5432/d34tt0hmg5pnnr</url>
+                    <user>sxfrarmfynwgbr</user>
+                    <password>0e9a125477be51a13622a22ec86f5a4e3e92fa940d9bea7336506900fb9afa69</password>
                     <schemas>
                         <schema>books</schema>
                     </schemas>
