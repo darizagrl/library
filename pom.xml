@@ -183,19 +183,19 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>7.9.1</version>
-                <configuration>
-                    <url>jdbc:h2:./data/books</url>
-                    <user></user>
-                    <password></password>
-                    <schemas>
-                        <schema>books</schema>
-                    </schemas>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.flywaydb</groupId>-->
+<!--                <artifactId>flyway-maven-plugin</artifactId>-->
+<!--                <version>7.9.1</version>-->
+<!--                <configuration>-->
+<!--                    <url>jdbc:h2:./data/books</url>-->
+<!--                    <user></user>-->
+<!--                    <password></password>-->
+<!--                    <schemas>-->
+<!--                        <schema>books</schema>-->
+<!--                    </schemas>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
     <reporting>
