@@ -3,7 +3,7 @@ package com.example.library.service;
 import com.example.library.persistence.entity.Author;
 import com.example.library.persistence.repository.book_repo.JpaBookRepository;
 import com.example.library.service.impl.BookServiceImpl;
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.BookModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

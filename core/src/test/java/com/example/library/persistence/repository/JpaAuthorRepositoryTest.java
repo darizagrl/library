@@ -1,7 +1,7 @@
 package com.example.library.persistence.repository;
 
 import com.example.library.persistence.entity.Author;
-import com.example.library.persistence.model.AuthorModel;
+import com.example.library.service.model.AuthorModel;
 import com.example.library.persistence.repository.author_repo.AuthorRepo;
 import com.example.library.persistence.repository.author_repo.JpaAuthorRepository;
 import ma.glasnost.orika.MapperFacade;

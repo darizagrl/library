@@ -1,6 +1,6 @@
 package com.example.library.persistence.repository.author_repo;
 
-import com.example.library.persistence.model.AuthorModel;
+import com.example.library.service.model.AuthorModel;
 
 import java.util.List;
 

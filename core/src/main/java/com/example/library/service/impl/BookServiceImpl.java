@@ -1,6 +1,6 @@
 package com.example.library.service.impl;
 
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.BookModel;
 import com.example.library.persistence.repository.book_repo.BookRepository;
 import com.example.library.service.BookService;
 import lombok.RequiredArgsConstructor;

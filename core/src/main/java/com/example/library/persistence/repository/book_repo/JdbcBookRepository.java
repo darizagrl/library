@@ -1,6 +1,6 @@
 package com.example.library.persistence.repository.book_repo;
 
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.BookModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
 package com.example.library.persistence.repository.author_repo;
 
-import com.example.library.persistence.model.AuthorModel;
+import com.example.library.service.model.AuthorModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

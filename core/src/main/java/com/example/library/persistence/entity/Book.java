@@ -2,6 +2,7 @@ package com.example.library.persistence.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -14,6 +15,8 @@ public class Book {
     @Column(name = "title")
     @NotBlank
     private String title;
+    @Column(name = "price")
+    private BigDecimal price;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "books_authors",
             joinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id"),
@@ -36,6 +39,14 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public List<Author> getAuthors() {

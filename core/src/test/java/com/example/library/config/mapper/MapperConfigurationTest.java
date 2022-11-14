@@ -2,7 +2,7 @@ package com.example.library.config.mapper;
 
 import com.example.library.api.dto.AuthorDTO;
 import com.example.library.persistence.entity.Author;
-import com.example.library.persistence.model.AuthorModel;
+import com.example.library.service.model.AuthorModel;
 import ma.glasnost.orika.MapperFacade;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

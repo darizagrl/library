@@ -1,6 +1,6 @@
 package com.example.library.service;
 
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.BookModel;
 
 import java.util.List;
 

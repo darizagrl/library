@@ -1,7 +1,7 @@
 package com.example.library.api.controller;
 
 import com.example.library.api.dto.AuthorDTO;
-import com.example.library.persistence.model.AuthorModel;
+import com.example.library.service.model.AuthorModel;
 import com.example.library.service.AuthorService;
 import ma.glasnost.orika.MapperFacade;
 import org.junit.jupiter.api.Test;

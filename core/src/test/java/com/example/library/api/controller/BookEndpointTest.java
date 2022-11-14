@@ -2,8 +2,8 @@ package com.example.library.api.controller;
 
 import com.example.library.api.dto.AuthorDTO;
 import com.example.library.api.dto.BookDTO;
-import com.example.library.persistence.model.AuthorModel;
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.AuthorModel;
+import com.example.library.service.model.BookModel;
 import com.example.library.service.impl.AuthorServiceImpl;
 import com.example.library.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,6 +1,6 @@
 package com.example.library.persistence.repository.book_repo;
 
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.BookModel;
 import lombok.RequiredArgsConstructor;
 import ma.glasnost.orika.MapperFacade;
 import org.springframework.stereotype.Repository;

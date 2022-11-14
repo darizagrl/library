@@ -1,17 +1,18 @@
-package com.example.library.api.dto;
+package com.example.library.service.model;
 
-import com.example.library.service.model.BookModel;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthorDTO {
+public class AuthorModel {
     private Long id;
     private String firstname;
     private String lastname;

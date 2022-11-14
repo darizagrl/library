@@ -1,7 +1,7 @@
 package com.example.library.persistence.repository.book_repo;
 
 import com.example.library.config.RequestContext;
-import com.example.library.persistence.model.BookModel;
+import com.example.library.service.model.BookModel;
 import lombok.RequiredArgsConstructor;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.example.library.service;
 
 import com.example.library.persistence.entity.Book;
-import com.example.library.persistence.model.AuthorModel;
+import com.example.library.service.model.AuthorModel;
 import com.example.library.persistence.repository.author_repo.JpaAuthorRepository;
 import com.example.library.service.impl.AuthorServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
