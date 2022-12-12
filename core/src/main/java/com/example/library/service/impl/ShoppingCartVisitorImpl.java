@@ -1,7 +1,7 @@
 package com.example.library.service.impl;
 
-import com.example.library.service.ShoppingCartVisitor;
-import com.example.library.service.model.BookModel;
+import com.example.library.persistence.entity.Book;
+import com.example.library.service.visitor.ShoppingCartVisitor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class ShoppingCartVisitorImpl implements ShoppingCartVisitor {
 
     @Override
-    public BigDecimal visit(BookModel book) {
+    public BigDecimal visit(Book book) {
         return book.getPrice();
     }
 }

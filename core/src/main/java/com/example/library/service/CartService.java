@@ -7,4 +7,7 @@ public interface CartService {
     BigDecimal calculatePrice();
 
     void addToCart(String productId);
+
+    void emptyCart();
+
 }

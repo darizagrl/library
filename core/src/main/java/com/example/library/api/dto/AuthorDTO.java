@@ -6,15 +6,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthorDTO {
     private Long id;
     private String firstname;
     private String lastname;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private BigDecimal discount;
     private List<BookModel> booksList;
 }

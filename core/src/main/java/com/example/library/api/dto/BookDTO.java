@@ -12,10 +12,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class BookDTO {
     private Long id;
     private String title;
     private BigDecimal price;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private BigDecimal discount;
     private List<AuthorModel> authorsList;
 }

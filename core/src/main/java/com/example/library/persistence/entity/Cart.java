@@ -24,6 +24,7 @@ public class Cart {
     private @NotBlank Long productId;
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
+    // list of books, not a single book.
     private Book book;
 
 }

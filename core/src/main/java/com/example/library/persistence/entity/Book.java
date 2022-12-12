@@ -1,5 +1,8 @@
 package com.example.library.persistence.entity;
 
+import com.example.library.service.model.ItemElement;
+import com.example.library.service.visitor.ShoppingCartVisitor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
@@ -7,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "books")
-public class Book {
+public class Book implements ItemElement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -17,6 +20,8 @@ public class Book {
     private String title;
     @Column(name = "price")
     private BigDecimal price;
+    @Column(name = "discount")
+    private BigDecimal discount;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "books_authors",
             joinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id"),
@@ -24,6 +29,11 @@ public class Book {
                     name = "book_id", referencedColumnName = "id"
             ))
     private List<Author> authors;
+
+    @Override
+    public BigDecimal accept(ShoppingCartVisitor visitor) {
+        return visitor.visit(this);
+    }
 
     public Long getId() {
         return id;
@@ -47,6 +57,14 @@ public class Book {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
     }
 
     public List<Author> getAuthors() {

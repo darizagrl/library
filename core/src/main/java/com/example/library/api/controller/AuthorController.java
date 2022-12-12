@@ -2,9 +2,9 @@ package com.example.library.api.controller;
 
 import com.example.library.api.dto.AuthorDTO;
 import com.example.library.api.dto.BookDTO;
-import com.example.library.service.model.AuthorModel;
 import com.example.library.service.AuthorService;
 import com.example.library.service.BookService;
+import com.example.library.service.model.AuthorModel;
 import lombok.RequiredArgsConstructor;
 import ma.glasnost.orika.MapperFacade;
 import org.springframework.http.HttpStatus;

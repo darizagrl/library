@@ -28,4 +28,11 @@ public class CartController {
         return ResponseEntity.ok(totalCost);
     }
 
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    @GetMapping("/empty")
+    public ResponseEntity<Void> empty() {
+        cartService.emptyCart();
+        return ResponseEntity.noContent().build();
+    }
+
 }
