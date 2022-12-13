@@ -2,12 +2,16 @@ package com.example.library.persistence.entity;
 
 import com.example.library.service.model.ItemElement;
 import com.example.library.service.visitor.ShoppingCartVisitor;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "books")
 public class Book implements ItemElement {
@@ -33,45 +37,5 @@ public class Book implements ItemElement {
     @Override
     public BigDecimal accept(ShoppingCartVisitor visitor) {
         return visitor.visit(this);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public BigDecimal getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
-    }
-
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
     }
 }
