@@ -50,8 +50,7 @@ public class CartServiceImpl implements CartService {
         List<Book> books = getBooksFromCart();
         BigDecimal price = BigDecimal.ZERO;
         for (Book book : books) {
-            visitor = checkBookDiscount(book);
-
+            visitor = checkAuthorDiscount(book);
             price = price.add(book.accept(visitor));
         }
         return price;
@@ -59,22 +58,21 @@ public class CartServiceImpl implements CartService {
 
     private ShoppingCartVisitor checkBookDiscount(Book book) {
         if (Objects.nonNull(book.getDiscount())) {
-            visitor = new BookDiscount(visitor);
+            return new BookDiscount(visitor);
         }
-        return checkAuthorDiscount(book);
+        return new ShoppingCartVisitorImpl();
     }
 
     private ShoppingCartVisitor checkAuthorDiscount(Book book) {
         var authorsDiscount = book.getAuthors()
                 .stream()
                 .map(Author::getDiscount)
+                .filter(Objects::nonNull)
                 .collect(Collectors.toList());
-        for (BigDecimal discount : authorsDiscount) {
-            if (Objects.nonNull(discount)) {
-                visitor = new AuthorDiscount(visitor);
-            }
+        if (!authorsDiscount.isEmpty()) {
+           return new AuthorDiscount(visitor);
         }
-        return visitor;
+        return checkBookDiscount(book);
     }
 
     private List<Book> getBooksFromCart() {
